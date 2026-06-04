@@ -269,13 +269,14 @@
 
     /* ===== CTA SECTION ===== */
     .cta-section {
-      background: var(--bg-warm);
-      border-top: 1px solid var(--border);
-      color: var(--text); text-align: center; padding: 80px 20px;
+      background: #D6E8F4;
+      border-top: 1px solid #BDD5E8;
+      border-bottom: 1px solid #BDD5E8;
+      color: var(--text); text-align: center; padding: 48px 20px;
     }
     .cta-section h2 { color: var(--text); margin-bottom: 12px; }
-    .cta-section > .container > p { color: var(--text-mid); max-width: 500px; margin: 0 auto 38px; }
-    .cta-eyebrow { font-size:0.74rem; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color: var(--blue); margin-bottom:10px; }
+    .cta-section > .container > p { color: var(--text-mid); max-width: 500px; margin: 0 auto 32px; }
+    .cta-eyebrow { display: none; }
     .cta-cards { display: flex; gap: 18px; justify-content: center; flex-wrap: wrap; margin-bottom: 36px; }
     .cta-card {
       display: flex; align-items: center; gap: 14px;
@@ -355,22 +356,34 @@
       .hero-overlay { background: linear-gradient(95deg, rgba(253,252,250,0.98) 0%, rgba(246,243,238,0.9) 50%, rgba(246,243,238,0.3) 100%); }
     }
   </style>
+  <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
 
 <!-- ===== NAVIGATION ===== -->
 <header>
   <nav>
-    <a href="/" class="nav-logo">
-      <img src="images/DLS-logo-simple.png" alt="Dentallabor Schwinkowski GmbH" />
+    <a href="index.html" class="nav-logo">
+      <img src="images/DLS-logo-simple.png" alt="Dental-Labor Schwinkowski GmbH" />
     </a>
     <ul class="nav-links">
-      <li><a href="/" class="active">Home</a></li>
-      <li><a href="/leistungen">Leistungen</a></li>
-      <li><a href="/leistungen/schlafmedizin">Schlafmedizin</a></li>
-      <li><a href="/ueber-uns">Über uns</a></li>
-      <li><a href="/karriere">Karriere</a></li>
-      <li><a href="/kontakt" class="nav-cta">Kontakt</a></li>
+      <li class="nav-dropdown">
+        <a href="leistungen.html">Leistungen</a>
+        <ul class="dropdown-menu">
+          <li><a href="zahnersatz.html">Zahnersatz &amp; Implantate</a></li>
+          <li><a href="schlafmedizin.html">Schlafapnoe-Therapie</a></li>
+          <li><a href="chirurgische-prothetik.html">Chirurgische Prothetik</a></li>
+        </ul>
+      </li>
+      <li class="nav-dropdown">
+        <a href="ueber-uns.html">Über uns</a>
+        <ul class="dropdown-menu">
+          <li><a href="ueber-uns.html">Labor &amp; Team</a></li>
+          <li><a href="karriere.html">Karriere</a></li>
+        </ul>
+      </li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="kontakt.html" class="nav-cta">Kontakt</a></li>
     </ul>
   </nav>
 </header>
@@ -388,11 +401,11 @@
     <p class="hero-italic">… immer ein Lächeln voraus!</p>
     <p class="hero-sub">Zahntechnik vom Meister in Erfurt. Zahnersatz, Implantate &amp; Schlafapnoe-Therapie.</p>
     <div class="hero-btns">
-      <a href="/kontakt?typ=anfrage" class="btn btn-primary">
+      <a href="kontakt.html?typ=anfrage" class="btn btn-primary">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
         Kostenlose Beratung anfordern
       </a>
-      <a href="/leistungen" class="btn" style="background:var(--white); color:var(--blue); border:1.5px solid var(--border);">
+      <a href="leistungen.html" class="btn" style="background:var(--white); color:var(--blue); border:1.5px solid var(--border);">
         Leistungsübersicht
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
@@ -494,7 +507,7 @@
           </div>
           <h3>Zahnersatz &amp; Implantate</h3>
           <p>Kronen, Brücken, Prothesen aus modernen Materialien. CAD/CAM-Technologie, Edelmetall- und Keramiktechnik für perfekte Ästhetik und Funktion.</p>
-          <a href="/leistungen/zahnersatz" class="card-link">
+          <a href="zahnersatz.html" class="card-link">
             Mehr erfahren
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
@@ -512,7 +525,7 @@
           </div>
           <h3>Schlafapnoe-Therapie Erfurt</h3>
           <p>Fachlabor für TAP®-, Silensor®- und weitere Zahnschienen. Zertifiziert und erprobt. Individuell angefertigt für erholsamen Schlaf.</p>
-          <a href="/leistungen/schlafmedizin" class="card-link">
+          <a href="schlafmedizin.html" class="card-link">
             Mehr erfahren
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
@@ -530,7 +543,7 @@
           </div>
           <h3>Chirurgische Prothetik &amp; Epithesen</h3>
           <p>Resektionsprothesen, Epithesen (Augen, Nasen, Ohren), Spezialgeräte. Für Patienten mit besonderen medizinischen Anforderungen.</p>
-          <a href="/leistungen/chirurgische-prothetik" class="card-link">
+          <a href="chirurgische-prothetik.html" class="card-link">
             Mehr erfahren
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
@@ -654,7 +667,7 @@
         <p>Schnarchen Sie jede Nacht? Fühlen sich tagsüber müde? Kopfschmerzen am Morgen?</p>
       </div>
 
-      <a href="/leistungen/schlafmedizin" class="btn btn-primary">
+      <a href="schlafmedizin.html" class="btn btn-primary">
         Kostenlose Beratung buchen
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
@@ -707,7 +720,7 @@
       </div>
     </div>
 
-    <a href="/kontakt" class="btn btn-primary" style="font-size:1rem; padding:14px 36px;">
+    <a href="kontakt.html" class="btn btn-primary" style="font-size:1rem; padding:14px 36px;">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
       Kontaktformular öffnen
     </a>
@@ -715,14 +728,38 @@
 </section>
 
 
+
+<!-- ===== KARRIERE BANNER ===== -->
+<section style="background:var(--bg-warm); border-top:1px solid var(--border); border-bottom:1px solid var(--border); padding:56px 20px;">
+  <div class="container" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:28px;">
+    <div style="display:flex; align-items:center; gap:20px;">
+      <div style="width:52px; height:52px; background:var(--blue-light); border-radius:12px; display:flex; align-items:center; justify-content:center; color:var(--blue); flex-shrink:0;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 7H4a2 2 0 00-2 2v6a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
+      </div>
+      <div>
+        <p style="font-size:0.75rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--blue); margin:0 0 4px;">Karriere</p>
+        <h3 style="font-size:1.3rem; margin:0 0 4px;">Wir suchen Verstärkung</h3>
+        <p style="color:var(--text-mid); font-size:0.92rem; margin:0;">Zahntechniker/in und Auszubildende – in einem modernen Labor mit Zukunft.</p>
+      </div>
+    </div>
+    <a href="karriere.html" class="btn btn-primary">
+      Offene Stellen ansehen
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</section>
+
 <!-- ===== FOOTER ===== -->
 <footer>
   <div class="footer-grid container">
     <div class="footer-brand">
-      <img src="images/DLS-logo-simple.png" alt="Dentallabor Schwinkowski" class="footer-logo" />
-      <p>Bergstraße 38 · 99092 Erfurt<br>
-         Tel: 0361-2 11 30 03 · Fax: 0361-2 11 30 05<br>
-         dl-schwinkowski@t-online.de</p>
+      <img src="images/DLS-logo-simple.png" alt="Dental-Labor Schwinkowski" class="footer-logo" />
+      <p>Bergstraße 38 · 99092 Erfurt<br>Tel: 0361-2 11 30 03<br>dl-schwinkowski@t-online.de</p>
+      <table class="footer-hours" style="margin-bottom:16px;">
+        <tr><td>Mo – Fr</td><td>8:00 – 17:00</td></tr>
+        <tr><td>Samstag</td><td>n. Vereinbarung</td></tr>
+        <tr><td>Sonntag</td><td style="color:var(--text-light);">Geschlossen</td></tr>
+      </table>
       <div class="footer-badges">
         <span class="footer-badge">dbve</span>
         <span class="footer-badge">IASPE</span>
@@ -733,41 +770,36 @@
     <div class="footer-col">
       <h4>Leistungen</h4>
       <ul>
-        <li><a href="/leistungen/zahnersatz">Zahnersatz &amp; Implantate</a></li>
-        <li><a href="/leistungen/schlafmedizin">Schlafapnoe-Therapie</a></li>
-        <li><a href="/leistungen/chirurgische-prothetik">Chirurgische Prothetik</a></li>
-        <li><a href="/leistungen">Alle Leistungen</a></li>
+        <li><a href="zahnersatz.html">Zahnersatz &amp; Implantate</a></li>
+        <li><a href="schlafmedizin.html">Schlafapnoe-Therapie</a></li>
+        <li><a href="chirurgische-prothetik.html">Chirurgische Prothetik</a></li>
+        <li><a href="leistungen.html">Alle Leistungen</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Unternehmen</h4>
       <ul>
-        <li><a href="/ueber-uns">Über uns</a></li>
-        <li><a href="/karriere">Karriere</a></li>
-        <li><a href="/kontakt">Kontakt</a></li>
-        <li><a href="/impressum">Impressum</a></li>
-        <li><a href="/datenschutz">Datenschutz</a></li>
+        <li><a href="ueber-uns.html">Über uns</a></li>
+        <li><a href="karriere.html">Karriere</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
       </ul>
     </div>
     <div class="footer-col">
-      <h4>Öffnungszeiten</h4>
-      <table class="footer-hours">
-        <tr><td>Mo – Fr</td><td>8:00 – 17:00</td></tr>
-        <tr><td>Samstag</td><td>n. Vereinbarung</td></tr>
-        <tr><td>Sonntag</td><td style="color:rgba(255,255,255,0.25);">Geschlossen</td></tr>
-      </table>
-      <div class="footer-service">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-        Kostenloser Hol- &amp; Bringedienst
-      </div>
+      <h4>Rechtliches &amp; Service</h4>
+      <ul>
+        <li><a href="downloads.html">Downloads</a></li>
+        <li><a href="impressum.html">Impressum</a></li>
+        <li><a href="datenschutz.html">Datenschutz</a></li>
+      </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2026 Dentallabor Schwinkowski GmbH · Alle Rechte vorbehalten</span>
+    <span>© 2026 Dental-Labor Schwinkowski GmbH · Alle Rechte vorbehalten</span>
     <div>
-      <a href="/impressum">Impressum</a>
-      <a href="/datenschutz">Datenschutz</a>
-      <a href="/sitemap">Sitemap</a>
+      <a href="downloads.html">Downloads</a>
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
     </div>
   </div>
 </footer>

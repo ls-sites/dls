@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog – Wissen & Aktuelles | Dental-Labor Schwinkowski</title>
+  <meta name="description" content="Fachbeiträge zu Schlafmedizin, Zahntechnik und Neuigkeiten aus dem Dental-Labor Schwinkowski." />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+<header>
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <img src="images/DLS-logo-simple.png" alt="Dental-Labor Schwinkowski GmbH" />
+    </a>
+    <ul class="nav-links">
+      <li class="nav-dropdown">
+        <a href="leistungen.html">Leistungen</a>
+        <ul class="dropdown-menu">
+          <li><a href="zahnersatz.html">Zahnersatz &amp; Implantate</a></li>
+          <li><a href="schlafmedizin.html">Schlafapnoe-Therapie</a></li>
+          <li><a href="chirurgische-prothetik.html">Chirurgische Prothetik</a></li>
+        </ul>
+      </li>
+      <li class="nav-dropdown">
+        <a href="ueber-uns.html">Über uns</a>
+        <ul class="dropdown-menu">
+          <li><a href="ueber-uns.html">Labor &amp; Team</a></li>
+          <li><a href="karriere.html">Karriere</a></li>
+        </ul>
+      </li>
+      <li><a href="blog.html" class="active">Blog</a></li>
+      <li><a href="kontakt.html" class="nav-cta">Kontakt</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> <span>›</span> Blog</div>
+    <p class="eyebrow">Wissen &amp; Aktuelles</p>
+    <h1>Blog</h1>
+    <p>Fachbeiträge zu Zahntechnik, Schlafmedizin und News aus dem Labor.</p>
+  </div>
+</section>
+
+<section class="section section--white">
+  <div class="container">
+
+    <!-- Kategorie-Filter -->
+    <div id="filter-bar" style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:40px;">
+      <button class="filter-btn active" data-filter="alle">Alle</button>
+      <button class="filter-btn" data-filter="Schlafmedizin">Schlafmedizin</button>
+      <button class="filter-btn" data-filter="Zahntechnik">Zahntechnik</button>
+      <button class="filter-btn" data-filter="Für Zahnärzte">Für Zahnärzte</button>
+      <button class="filter-btn" data-filter="Neuigkeiten">Neuigkeiten</button>
+    </div>
+
+    <style>
+      .filter-btn {
+        padding: 7px 16px; border-radius: 20px; font-size: 0.82rem;
+        font-weight: 600; cursor: pointer; border: 1px solid var(--border);
+        background: var(--white); color: var(--text-mid);
+        transition: background 0.15s, color 0.15s, border-color 0.15s;
+        font-family: inherit;
+      }
+      .filter-btn:hover { border-color: var(--blue); color: var(--blue); }
+      .filter-btn.active { background: var(--blue); color: white; border-color: var(--blue); }
+      .blog-card { transition: opacity 0.2s, transform 0.2s; }
+      .blog-card.hidden { display: none; }
+    </style>
+
+    <!-- Artikel-Grid -->
+    <div class="three-col" id="article-grid">
+
+      <!-- Platzhalter-Artikel 1 -->
+      <article class="card blog-card" data-category="Schlafmedizin">
+        <div class="card-img img-placeholder">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+          <span>Artikel-Bild</span>
+        </div>
+        <div class="card-body">
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:10px;">
+            <span style="font-size:0.72rem; font-weight:700; background:var(--blue-light); color:var(--blue); padding:3px 9px; border-radius:10px;">Schlafmedizin</span>
+            <span style="font-size:0.75rem; color:var(--text-light);">Juni 2026</span>
+          </div>
+          <h3 style="margin-bottom:8px;">TAP® vs. Silensor® – welche Schiene passt zu mir?</h3>
+          <p style="font-size:0.87rem; color:var(--text-mid);">Ein Vergleich der beiden beliebtesten Zahnschienen zur Schlafapnoe-Therapie – Komfort, Kosten und Einsatzgebiete.</p>
+          <a href="#" class="card-link">Artikel lesen <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </article>
+
+      <!-- Platzhalter-Artikel 2 -->
+      <article class="card blog-card" data-category="Zahntechnik">
+        <div class="card-img img-placeholder">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          <span>Artikel-Bild</span>
+        </div>
+        <div class="card-body">
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:10px;">
+            <span style="font-size:0.72rem; font-weight:700; background:var(--blue-light); color:var(--blue); padding:3px 9px; border-radius:10px;">Zahntechnik</span>
+            <span style="font-size:0.75rem; color:var(--text-light);">Mai 2026</span>
+          </div>
+          <h3 style="margin-bottom:8px;">Was ist CAD/CAM und warum ist es so präzise?</h3>
+          <p style="font-size:0.87rem; color:var(--text-mid);">Digitale Zahntechnik verändert die Branche. Wir erklären, wie CAD/CAM funktioniert und was Patienten davon haben.</p>
+          <a href="#" class="card-link">Artikel lesen <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </article>
+
+      <!-- Platzhalter-Artikel 3 -->
+      <article class="card blog-card" data-category="Schlafmedizin">
+        <div class="card-img img-placeholder">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Artikel-Bild</span>
+        </div>
+        <div class="card-body">
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:10px;">
+            <span style="font-size:0.72rem; font-weight:700; background:var(--blue-light); color:var(--blue); padding:3px 9px; border-radius:10px;">Schlafmedizin</span>
+            <span style="font-size:0.75rem; color:var(--text-light);">April 2026</span>
+          </div>
+          <h3 style="margin-bottom:8px;">Wann übernimmt die Krankenkasse Schlafapnoe-Schienen?</h3>
+          <p style="font-size:0.87rem; color:var(--text-mid);">Gesetzlich versichert und Schlafapnoe? In vielen Fällen zahlt die Kasse – wir erklären die Voraussetzungen.</p>
+          <a href="#" class="card-link">Artikel lesen <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </article>
+
+      <!-- Platzhalter-Artikel 4 -->
+      <article class="card blog-card" data-category="Zahntechnik">
+        <div class="card-img img-placeholder">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 2c-1.5 0-3 .8-3.8 2.1C7.4 3 6.2 2.5 5 2.5 3 2.5 2 4 2 5.5c0 4 3 7 7 10l.5.4a1 1 0 001 0l.5-.4c4-3 7-6 7-10 0-1.5-1-3-3-3-1.2 0-2.4.5-3.2 1.6A4 4 0 0012 2z"/></svg>
+          <span>Artikel-Bild</span>
+        </div>
+        <div class="card-body">
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:10px;">
+            <span style="font-size:0.72rem; font-weight:700; background:var(--blue-light); color:var(--blue); padding:3px 9px; border-radius:10px;">Zahntechnik</span>
+            <span style="font-size:0.75rem; color:var(--text-light);">März 2026</span>
+          </div>
+          <h3 style="margin-bottom:8px;">Vollkeramik oder Metallkeramik – was ist besser?</h3>
+          <p style="font-size:0.87rem; color:var(--text-mid);">Beide Materialien haben ihre Stärken. Wir vergleichen Ästhetik, Haltbarkeit und Kosten für verschiedene Situationen.</p>
+          <a href="#" class="card-link">Artikel lesen <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </article>
+
+      <!-- Platzhalter-Artikel 5 -->
+      <article class="card blog-card" data-category="Für Zahnärzte">
+        <div class="card-img img-placeholder">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M20 7H4a2 2 0 00-2 2v6a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
+          <span>Artikel-Bild</span>
+        </div>
+        <div class="card-body">
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:10px;">
+            <span style="font-size:0.72rem; font-weight:700; background:var(--blue-light); color:var(--blue); padding:3px 9px; border-radius:10px;">Für Zahnärzte</span>
+            <span style="font-size:0.75rem; color:var(--text-light);">Februar 2026</span>
+          </div>
+          <h3 style="margin-bottom:8px;">5 Vorteile eines spezialisierten Dentallabors</h3>
+          <p style="font-size:0.87rem; color:var(--text-mid);">Warum Zahnarztpraxen langfristig von einem spezialisierten Partnerlabor profitieren – Qualität, Schnelligkeit und Beratung.</p>
+          <a href="#" class="card-link">Artikel lesen <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </article>
+
+      <!-- Platzhalter-Artikel 6 -->
+      <article class="card blog-card" data-category="Neuigkeiten">
+        <div class="card-img img-placeholder">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span>Artikel-Bild</span>
+        </div>
+        <div class="card-body">
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:10px;">
+            <span style="font-size:0.72rem; font-weight:700; background:var(--blue-light); color:var(--blue); padding:3px 9px; border-radius:10px;">Neuigkeiten</span>
+            <span style="font-size:0.75rem; color:var(--text-light);">Januar 2026</span>
+          </div>
+          <h3 style="margin-bottom:8px;">Schwinkowski rezertifiziert – ISO 13485 erneuert</h3>
+          <p style="font-size:0.87rem; color:var(--text-mid);">Wir freuen uns, die erfolgreiche Erneuerung unserer ISO 13485 Zertifizierung bekannt zu geben.</p>
+          <a href="#" class="card-link">Artikel lesen <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="note-box" style="margin-top:40px; text-align:center;">
+      Neue Artikel erscheinen regelmäßig. Sprechen Sie uns an, wenn Sie ein bestimmtes Thema interessiert: <a href="kontakt.html" style="color:var(--blue); font-weight:600;">kontakt.html</a>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid container">
+    <div class="footer-brand">
+      <img src="images/DLS-logo-simple.png" alt="Dental-Labor Schwinkowski" class="footer-logo" />
+      <p>Bergstraße 38 · 99092 Erfurt<br>Tel: 0361-2 11 30 03<br>dl-schwinkowski@t-online.de</p>
+      <table class="footer-hours" style="margin-bottom:16px;">
+        <tr><td>Mo – Fr</td><td>8:00 – 17:00</td></tr>
+        <tr><td>Samstag</td><td>n. Vereinbarung</td></tr>
+        <tr><td>Sonntag</td><td style="color:var(--text-light);">Geschlossen</td></tr>
+      </table>
+      <div class="footer-badges">
+        <span class="footer-badge">dbve</span>
+        <span class="footer-badge">IASPE</span>
+        <span class="footer-badge">VQZ</span>
+        <span class="footer-badge">ISO 13485</span>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Leistungen</h4>
+      <ul>
+        <li><a href="zahnersatz.html">Zahnersatz &amp; Implantate</a></li>
+        <li><a href="schlafmedizin.html">Schlafapnoe-Therapie</a></li>
+        <li><a href="chirurgische-prothetik.html">Chirurgische Prothetik</a></li>
+        <li><a href="leistungen.html">Alle Leistungen</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Unternehmen</h4>
+      <ul>
+        <li><a href="ueber-uns.html">Über uns</a></li>
+        <li><a href="karriere.html">Karriere</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Rechtliches &amp; Service</h4>
+      <ul>
+        <li><a href="downloads.html">Downloads</a></li>
+        <li><a href="impressum.html">Impressum</a></li>
+        <li><a href="datenschutz.html">Datenschutz</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Dental-Labor Schwinkowski GmbH · Alle Rechte vorbehalten</span>
+    <div>
+      <a href="downloads.html">Downloads</a>
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const filter = btn.dataset.filter;
+      // Update active button
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      // Show/hide articles
+      document.querySelectorAll('.blog-card').forEach(card => {
+        if (filter === 'alle' || card.dataset.category === filter) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    });
+  });
+</script>
+</body>
+</html>

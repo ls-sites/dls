@@ -381,11 +381,11 @@ footer {
   .nav-links {
     display: none;
     position: fixed; top: 70px; left: 0; right: 0; bottom: 0;
-    background: transparent;
+    background: var(--white);
     flex-direction: column; align-items: stretch;
-    padding: 16px; gap: 0;
+    padding: 0; gap: 0;
     overflow-y: auto;
-    box-shadow: none;
+    box-shadow: inset 0 2px 8px rgba(0,0,0,0.04);
     z-index: 999;
   }
   .nav-links.open { display: flex; }

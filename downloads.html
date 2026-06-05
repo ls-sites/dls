@@ -63,7 +63,7 @@
               <div style="font-size:0.8rem; color:var(--text-light);">PDF · Standardformular für Laboraufträge</div>
             </div>
           </div>
-          <a href="images/Auftragsblatt Vorderseite.pdf" download class="btn btn-primary" style="padding:9px 18px; font-size:0.85rem; flex-shrink:0;">
+          <a href="../images/Auftragsblatt Vorderseite.pdf" download class="btn btn-primary" style="padding:9px 18px; font-size:0.85rem; flex-shrink:0;">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download
           </a>
         </div>
@@ -142,7 +142,7 @@
               <div style="font-size:0.8rem; color:var(--text-light);">PDF · Qualitätszertifikat Zahntechnik</div>
             </div>
           </div>
-          <a href="images/csm_recase-zertifizierung-vqz-Bonn_17f8fd61a6.jpg" download class="btn btn-primary" style="padding:9px 18px; font-size:0.85rem; flex-shrink:0;">
+          <a href="../images/csm_recase-zertifizierung-vqz-Bonn_17f8fd61a6.jpg" download class="btn btn-primary" style="padding:9px 18px; font-size:0.85rem; flex-shrink:0;">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download
           </a>
         </div>
@@ -171,7 +171,7 @@
 <footer>
   <div class="footer-grid container">
     <div class="footer-brand">
-      <img src="images/DLS-logo-simple.png" alt="Dental-Labor Schwinkowski" class="footer-logo" />
+      <img src="../images/DLS-logo-simple.png" alt="Dental-Labor Schwinkowski" class="footer-logo" />
       <p>Bergstraße 38 · 99092 Erfurt<br>Tel: 0361-2 11 30 03<br>dl-schwinkowski@t-online.de</p>
       <table class="footer-hours" style="margin-bottom:16px;">
         <tr><td>Mo – Fr</td><td>8:00 – 17:00</td></tr>
@@ -221,5 +221,22 @@
     </div>
   </div>
 </footer>
+<script>
+  const toggle = document.getElementById('nav-toggle');
+  const links  = document.querySelector('.nav-links');
+  if (toggle && links) {
+    toggle.addEventListener('click', () => {
+      toggle.classList.toggle('open');
+      links.classList.toggle('open');
+    });
+    // Close on link click
+    links.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        toggle.classList.remove('open');
+        links.classList.remove('open');
+      });
+    });
+  }
+</script>
 </body>
 </html>

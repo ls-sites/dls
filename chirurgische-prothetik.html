@@ -154,7 +154,7 @@
 <footer>
   <div class="footer-grid container">
     <div class="footer-brand">
-      <img src="images/DLS-logo-simple.png" alt="Dental-Labor Schwinkowski" class="footer-logo" />
+      <img src="../images/DLS-logo-simple.png" alt="Dental-Labor Schwinkowski" class="footer-logo" />
       <p>Bergstraße 38 · 99092 Erfurt<br>Tel: 0361-2 11 30 03<br>dl-schwinkowski@t-online.de</p>
       <table class="footer-hours" style="margin-bottom:16px;">
         <tr><td>Mo – Fr</td><td>8:00 – 17:00</td></tr>
@@ -204,5 +204,22 @@
     </div>
   </div>
 </footer>
+<script>
+  const toggle = document.getElementById('nav-toggle');
+  const links  = document.querySelector('.nav-links');
+  if (toggle && links) {
+    toggle.addEventListener('click', () => {
+      toggle.classList.toggle('open');
+      links.classList.toggle('open');
+    });
+    // Close on link click
+    links.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        toggle.classList.remove('open');
+        links.classList.remove('open');
+      });
+    });
+  }
+</script>
 </body>
 </html>

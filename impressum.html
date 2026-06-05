@@ -186,6 +186,14 @@
   </div>
 </footer>
 <script>
+  // Aktiver Menüpunkt (Desktop; auf Mobile via CSS deaktiviert)
+  (function() {
+    var page = location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.nav-links a:not(.nav-cta)').forEach(function(a) {
+      if (a.getAttribute('href') === page) a.classList.add('active');
+    });
+  })();
+
   const toggle = document.getElementById('nav-toggle');
   const links  = document.querySelector('.nav-links');
   if (toggle && links) {

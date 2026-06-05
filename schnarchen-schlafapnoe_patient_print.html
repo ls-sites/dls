@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Schnarchen & Schlafapnoe – Patienteninformation | Dentallabor Schwinkowski GmbH</title>
+  <style>
+    :root {
+      --bg:         #FDFCFA;
+      --bg-warm:    #F6F3EE;
+      --bg-mid:     #EDE9E2;
+      --border:     #E2DDD6;
+      --text:       #2E2E2E;
+      --text-mid:   #5A5652;
+      --text-light: #8A8480;
+      --blue:       #1A8EC8;
+      --blue-dark:  #1270A0;
+      --blue-light: #EBF5FB;
+      --blue-mid:   #D0EAF7;
+      --footer-bg:  #ECEAE5;
+      --white:      #FFFFFF;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      font-size: 10pt;
+      line-height: 1.55;
+    }
+
+    /* ── A4 pages ── */
+    .page {
+      width: 210mm;
+      height: 297mm;
+      overflow: hidden;
+      margin: 0 auto;
+      background: var(--white);
+      display: flex;
+      flex-direction: column;
+    }
+
+    @media screen {
+      body { background: #b8b8b8; padding: 24px 0; }
+      .page { box-shadow: 0 4px 28px rgba(0,0,0,0.22); margin-bottom: 16px; }
+    }
+
+    @media print {
+      html, body { background: white; margin: 0; padding: 0; }
+      .page { page-break-after: always; box-shadow: none; margin: 0; }
+      .page:last-of-type { page-break-after: auto; }
+      .no-print { display: none !important; }
+      @page { size: A4; margin: 0; }
+    }
+
+    /* ── Header ── */
+    .doc-header {
+      background: var(--footer-bg);
+      border-bottom: 3px solid var(--blue);
+      padding: 8mm 13mm;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-shrink: 0;
+    }
+    .doc-header img.logo { height: 18mm; width: auto; display: block; flex-shrink: 0; }
+    .header-label { text-align: right; }
+    .header-label .eyebrow {
+      font-size: 6.5pt; font-weight: 700; letter-spacing: 2.5px;
+      text-transform: uppercase; color: var(--blue); margin-bottom: 2px;
+    }
+    .header-label h1 {
+      font-size: 16pt; font-weight: 700; color: var(--text); line-height: 1.2;
+    }
+
+    /* ── Page-2 top accent (no header) ── */
+    .page-accent { height: 3px; background: var(--blue); flex-shrink: 0; }
+
+    /* ── Hero band ── */
+    .hero-band {
+      background: var(--blue);
+      padding: 5mm 13mm;
+      display: flex; align-items: center; gap: 10px;
+      flex-shrink: 0;
+    }
+    .hero-band p { color: var(--white); font-size: 9.5pt; line-height: 1.55; }
+    .hero-icon { flex-shrink: 0; opacity: 0.65; color: var(--white); }
+
+    /* ── Content areas ── */
+    .content {
+      padding: 8mm 13mm 7mm;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 6.5mm;
+    }
+    .content-p2 {
+      padding: 9mm 13mm 0;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 7mm;
+    }
+
+    /* ── Typography ── */
+    .eyebrow {
+      font-size: 6.5pt; font-weight: 700; letter-spacing: 2.5px;
+      text-transform: uppercase; color: var(--blue); margin-bottom: 1.5mm;
+    }
+    .rule { width: 26px; height: 2.5px; background: var(--blue); border-radius: 2px; margin: 2mm 0 4mm; }
+    h2 { font-size: 13pt; font-weight: 700; color: var(--text); line-height: 1.2; }
+    h3.sub {
+      font-size: 9pt; font-weight: 700; color: var(--blue);
+      margin-bottom: 1.5mm; margin-top: 4mm;
+    }
+    h3.sub:first-child { margin-top: 0; }
+    .body-text { font-size: 9.5pt; color: var(--text-mid); line-height: 1.6; }
+
+    /* ── Grids ── */
+    .two-col-wide { display: grid; grid-template-columns: 1.4fr 1fr; gap: 7mm; align-items: start; }
+    .two-col       { display: grid; grid-template-columns: 1fr 1fr;   gap: 7mm; align-items: start; }
+
+    /* ── Image placeholder ── */
+    .img-placeholder {
+      background: var(--bg-mid);
+      border: 1px dashed var(--border);
+      border-radius: 5px;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 5px; padding: 7mm;
+      color: var(--text-light); font-size: 7.5pt; text-align: center; line-height: 1.4;
+    }
+    .img-placeholder svg { opacity: 0.28; color: var(--blue); flex-shrink: 0; }
+    .img-size { font-size: 6.5pt; opacity: 0.65; }
+
+    /* ── Icon list ── */
+    .icon-list { list-style: none; display: flex; flex-direction: column; gap: 2.2mm; margin-top: 2.5mm; }
+    .icon-list li {
+      display: flex; align-items: flex-start; gap: 6px;
+      font-size: 9.5pt; color: var(--text-mid); line-height: 1.45;
+    }
+    .icon-list li svg { flex-shrink: 0; margin-top: 2px; color: var(--blue); }
+
+    /* ── Info / warn box ── */
+    .info-box, .warn-box {
+      background: var(--blue-light);
+      border-left: 3px solid var(--blue);
+      border-radius: 0 5px 5px 0;
+      padding: 4.5mm 6mm;
+    }
+    .info-box p, .warn-box p { font-size: 9pt; color: var(--text); line-height: 1.55; }
+    .info-box strong, .warn-box strong { color: var(--blue-dark); }
+
+    /* ── Step cards ── */
+    .steps { display: grid; grid-template-columns: repeat(3,1fr); gap: 5mm; }
+    .step-card {
+      background: var(--bg-warm); border-radius: 5px;
+      padding: 5mm; border-top: 3px solid var(--blue);
+    }
+    .step-num { font-size: 6.5pt; font-weight: 700; color: var(--blue); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 2mm; }
+    .step-card h4 { font-size: 9.5pt; font-weight: 700; color: var(--text); margin-bottom: 2mm; line-height: 1.25; }
+    .step-card p { font-size: 8.5pt; color: var(--text-mid); line-height: 1.5; }
+
+    /* ── Warm section ── */
+    .warm-section { background: var(--bg-warm); border-radius: 5px; padding: 6mm 7mm; }
+
+    /* ── Contact CTA ── */
+    .cta-row {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 10mm; background: var(--blue); border-radius: 5px; padding: 5mm 7mm;
+    }
+    .cta-row p { color: var(--white); font-size: 9.5pt; line-height: 1.5; }
+    .cta-row p strong { color: var(--white); display: block; font-size: 11pt; margin-bottom: 1mm; }
+    .cta-contact { text-align: right; flex-shrink: 0; }
+    .cta-contact a { color: var(--white); font-size: 11pt; font-weight: 700; text-decoration: none; display: block; }
+    .cta-contact span { color: rgba(255,255,255,0.75); font-size: 8pt; }
+
+    /* ── Divider ── */
+    .divider { border: none; border-top: 1px solid var(--border); flex-shrink: 0; }
+
+    /* ── Footer ── */
+    .doc-footer {
+      background: var(--footer-bg);
+      border-top: 1px solid var(--border);
+      padding: 4.5mm 13mm;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 12px; flex-shrink: 0;
+    }
+    .footer-text { font-size: 7.5pt; color: var(--text-mid); line-height: 1.5; }
+    .footer-text strong { color: var(--text); display: block; font-size: 8pt; margin-bottom: 1px; }
+    .footer-divider { width: 1px; height: 10mm; background: var(--border); flex-shrink: 0; }
+    .footer-contact { text-align: right; font-size: 7.5pt; color: var(--text-mid); line-height: 1.7; }
+    .footer-contact a { color: var(--blue); font-weight: 700; text-decoration: none; }
+    .footer-note { font-size: 6.5pt; color: var(--text-light); }
+
+    /* ── Print button ── */
+    .print-bar {
+      width: 210mm; margin: 0 auto 12px;
+      display: flex; justify-content: flex-end;
+    }
+    .print-btn {
+      background: var(--blue); color: white; border: none;
+      padding: 8px 20px; border-radius: 4px;
+      font-size: 13px; font-weight: 700; cursor: pointer;
+      display: flex; align-items: center; gap: 6px;
+      font-family: 'Segoe UI', Arial, sans-serif;
+    }
+    .print-btn:hover { background: var(--blue-dark); }
+  </style>
+</head>
+<body>
+
+<div class="print-bar no-print">
+  <button class="print-btn" onclick="window.print()">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+    Drucken / Als PDF speichern
+  </button>
+</div>
+
+<!-- ══════════════════════════════════
+     SEITE 1
+     ══════════════════════════════════ -->
+<div class="page">
+
+  <div class="doc-header">
+    <img class="logo" src="images/DLS-logo.png" alt="Dentallabor Schwinkowski GmbH" />
+    <div class="header-label">
+      <div class="eyebrow">Patienteninformation</div>
+      <h1>Schnarchen &amp;<br>Schlafapnoe</h1>
+    </div>
+  </div>
+
+  <div class="hero-band">
+    <svg class="hero-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+    <p>Schnarchen kann ein Hinweis auf Schlafapnoe sein und langfristig Ihre Gesundheit ernsthaft belasten. Diese Information erklärt, was dahintersteckt – und wie eine individuelle Zahnschiene helfen kann.</p>
+  </div>
+
+  <div class="content">
+
+    <!-- Was passiert -->
+    <div class="two-col-wide">
+      <div>
+        <p class="eyebrow">Das Problem</p>
+        <h2>Was passiert beim Schnarchen?</h2>
+        <div class="rule"></div>
+        <p class="body-text" style="margin-bottom:3.5mm;">Wenn Sie schlafen, entspannt sich die Muskulatur im Rachen. Gaumensegel, Zäpfchen und Zunge können dann mit dem Atemstrom vibrieren – das erzeugt die typischen Schnarchgeräusche. Schnarchen ist weit verbreitet und nimmt mit dem Alter zu.</p>
+        <p class="body-text">Bei einer <strong>Schlafapnoe (OSAS)</strong> verschließen sich die Atemwege während des Schlafs immer wieder vollständig. Diese Atempausen dauern über 10 Sekunden und können sich hundertfach pro Nacht wiederholen. Das Gehirn löst jeweils eine kurze Weckreaktion aus – Sie merken es nicht, aber der Schlaf ist nie wirklich erholsam.</p>
+      </div>
+      <div class="img-placeholder" style="min-height:54mm;">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        <span>Anatomie: Rachenquerschnitt<br>normal → blockiert → mit Schiene</span>
+        <span class="img-size">560 × 380 px</span>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- Symptome + Folgen -->
+    <div class="two-col">
+      <div>
+        <p class="eyebrow">Symptome</p>
+        <h2>Woran erkenne ich es?</h2>
+        <div class="rule"></div>
+        <ul class="icon-list">
+          <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Lautes Schnarchen, vom Partner beobachtet</li>
+          <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Atempausen im Schlaf</li>
+          <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Morgens erschöpft aufwachen</li>
+          <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Starke Tagesmüdigkeit</li>
+          <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Kopfschmerzen am Morgen</li>
+          <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Mundtrockenheit nach dem Aufwachen</li>
+          <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Konzentrationsprobleme tagsüber</li>
+        </ul>
+      </div>
+      <div>
+        <p class="eyebrow">Langzeitfolgen</p>
+        <h2>Warum behandeln?</h2>
+        <div class="rule"></div>
+        <p class="body-text" style="margin-bottom:2.5mm;">Unbehandelte Schlafapnoe erhöht das Risiko für ernste Erkrankungen:</p>
+        <ul class="icon-list">
+          <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>Bluthochdruck</li>
+          <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>Herzinfarkt &amp; Schlaganfall</li>
+          <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>Diabetes mellitus Typ 2</li>
+          <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>Depressionen</li>
+          <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>Sekundenschlaf &amp; Unfallgefahr</li>
+        </ul>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- 3 Schritte -->
+    <div>
+      <p class="eyebrow">Die Lösung</p>
+      <h2>Ihr Weg zur Schnarchschiene</h2>
+      <div class="rule"></div>
+      <div class="steps">
+        <div class="step-card">
+          <div class="step-num">Schritt 01</div>
+          <h4>Diagnose beim Arzt</h4>
+          <p>Ihr Hausarzt oder HNO-Arzt veranlasst eine Schlafaufzeichnung. Bei bestätigter Schlafapnoe stellt er eine Verordnung aus.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">Schritt 02</div>
+          <h4>Zahnarzt &amp; Abdrücke</h4>
+          <p>Ihr Zahnarzt prüft die Eignung Ihrer Zähne und nimmt präzise Abdrücke beider Kiefer. Das Labor fertigt die Schiene individuell.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">Schritt 03</div>
+          <h4>Einstellung &amp; Kontrolle</h4>
+          <p>Die Schiene wird schrittweise angepasst. Mindestens einmal jährlich kontrollieren lassen – nur so bleibt sie wirksam.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div><!-- /Seite 1 -->
+
+
+<!-- ══════════════════════════════════
+     SEITE 2 (kein Header)
+     ══════════════════════════════════ -->
+<div class="page">
+
+  <div class="page-accent"></div>
+
+  <div class="content-p2">
+
+    <!-- Kassenleistung -->
+    <div class="info-box">
+      <p><strong>Kassenleistung seit 01. Januar 2022 –</strong> Die Unterkieferprotrusionsschiene (UKPS) ist gesetzliche Kassenleistung bei obstruktiver Schlafapnoe, wenn eine CPAP-Beatmungstherapie zuvor versucht und nicht vertragen wurde. Sprechen Sie Ihren Arzt darauf an.</p>
+    </div>
+
+    <!-- Behandlungsoptionen -->
+    <div class="warm-section">
+      <div class="two-col-wide" style="gap:8mm; align-items:stretch;">
+        <div>
+          <p class="eyebrow">Alle Möglichkeiten</p>
+          <h2>Behandlungsoptionen im Überblick</h2>
+          <div class="rule"></div>
+          <h3 class="sub">Schlafhygiene (erste Maßnahme)</h3>
+          <p class="body-text">Gewichtsreduktion, Schlafen in Seitenlage, kein Alkohol oder Schlafmittel abends.</p>
+          <h3 class="sub">Schnarchschiene (Zahnschiene)</h3>
+          <p class="body-text">Individuell angefertigt. Verlagert den Unterkiefer sanft nach vorne und hält die Atemwege frei. Keine Maske, kein Schlauch – diskret und komfortabel zu tragen.</p>
+          <h3 class="sub">CPAP-Therapie</h3>
+          <p class="body-text">Eine Atemmaske mit leichtem Überdruck hält die Atemwege offen. Sehr wirksam, wird aber von manchen Patienten nicht dauerhaft vertragen.</p>
+          <h3 class="sub">Operative Eingriffe</h3>
+          <p class="body-text">In bestimmten Fällen durch HNO-Arzt oder Kieferchirurg möglich – nach gründlicher Diagnostik.</p>
+        </div>
+        <div class="img-placeholder" style="min-height:74mm;">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+          <span>Vergleich Behandlungsoptionen:<br>Schiene / CPAP / Schlaflage</span>
+          <span class="img-size">440 × 500 px</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Vorsicht -->
+    <div class="warn-box">
+      <p><strong>Vorsicht bei Schienen aus dem Internet –</strong> Konfektionierte „Boil &amp; Bite"-Schienen sind nicht individuell angepasst. Sie sitzen zu hoch, können Schlafapnoe verschlimmern und unerwünschte Zahnbewegungen auslösen. Die Deutsche Gesellschaft Zahnärztliche Schlafmedizin (DGZS) rät ausdrücklich davon ab. Lassen Sie Ihre Schiene immer individuell vom Spezialisten anfertigen.</p>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-row">
+      <p>
+        <strong>Haben Sie Fragen?</strong>
+        Wir beraten Sie gerne – sprechen Sie Ihren Zahnarzt an oder kontaktieren Sie uns direkt. Ihr Fachlabor für Schlafapnoe-Zahntechnik in Erfurt.
+      </p>
+      <div class="cta-contact">
+        <a href="tel:+493612113003">0361 – 2 11 30 03</a>
+        <span>www.dentallabor-schwinkowski.de</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <div class="doc-footer">
+    <div class="footer-text">
+      <strong>Dentallabor Schwinkowski GmbH</strong>
+      Fachlabor für Schlafapnoe-Zahntechnik · Erfurter Institut für chirurgische Prothetik und Epithetik
+    </div>
+    <div class="footer-divider"></div>
+    <div class="footer-contact">
+      <a href="tel:+493612113003">0361 – 2 11 30 03</a><br>
+      www.dentallabor-schwinkowski.de<br>
+      <span class="footer-note">Stand: 2025 · Alle Angaben ohne Gewähr</span>
+    </div>
+  </div>
+
+</div><!-- /Seite 2 -->
+
+</body>
+</html>
